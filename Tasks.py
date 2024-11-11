@@ -16,8 +16,4 @@ print(result)
 
 
 
-
-#
-#start
-#
-#end
+#algorithm

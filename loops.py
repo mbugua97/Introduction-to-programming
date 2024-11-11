@@ -1,73 +1,41 @@
-# # # for loops
+# Loops in Python
 
-# # list_fruits=['banana','apple','mango','grapes','tommato']
+# `for` Loops
+# - `for` loops are used to iterate over sequences (e.g., lists, tuples, strings).
+# - The `for` loop goes through each item in the sequence, performing operations defined within the loop block.
 
+# Example Syntax:
+# for item in sequence:
+#     # Perform actions with each `item`
 
-# # for fruit in list_fruits:
-# #     print(fruit)
+# Range Function
+# - The `range()` function generates a sequence of numbers, useful for iterating a set number of times.
+# - `range(start, stop, step)` defines the start, end, and step size of the sequence.
+#   - `start` is the first number (inclusive).
+#   - `stop` is the end of the sequence (exclusive).
+#   - `step` is the amount by which to increment (default is 1).
 
-# # #range(min,max,step)
+# `while` Loops
+# - `while` loops are used when the number of iterations isn’t known in advance.
+# - The loop will continue running as long as the specified condition evaluates to `True`.
+# - Be cautious with `while` loops, as improper conditions can lead to infinite loops.
 
+# Example Syntax:
+# while condition:
+#     # Code to execute as long as `condition` is True
 
-# # #memory leak
+# Flow Control: `break` and `continue`
+# - `break`: Immediately exits the loop, skipping the remaining code and preventing further iterations.
+# - `continue`: Skips the current iteration and proceeds to the next iteration without exiting the loop.
 
+# Example Use Case:
+# - `break` can be used to exit a loop after a specific condition is met.
+# - `continue` can be used to skip unwanted values and continue with the next loop iteration.
 
-# # for i in range(0,100):
-# #     if i<20:
-# #         print(i)
+# Nested Loop Example: Password Attempts
+# - This setup allows repeated password attempts, breaking the loop if the correct password is entered or a maximum number of tries is reached.
+# - `True` creates an infinite loop, which will break when certain conditions are met.
 
-
-# # #
-# # # while loops
-
-# my_list=[4,11,8,5,13,2]
-
-
-# for i in range(0,5):
-#     print(my_list[i])
-
-# added_values=0
-# i=0
-
-# #while (condition):
-# #   execute
-
-# a=1
-# b=(a>1)
-
-# while (added_values<20):
-#     added_values+=my_list[i]
-#     i+=1
-
-
-
-
-
-# #Break and continue
-
-
-# #quiz -print even numbers in the range 0-100 using while,continue
-# # for number in range(1,51):
-# #     if number %2==0:
-# #         print(number)
-# #     else:
-# #         continue
-
-# break
-savedPassword='password'
-passwordCount=0
-while True:
-    print(f"your password count is {passwordCount}")
-    if passwordCount<3:
-        passwordCount+=1
-        password=input("what is your password")
-        if password==savedPassword:
-            break
-        else:
-            continue
-    else:
-        break
-
-
-
-
+# Looping and Conditionals Summary
+# - `for` loops and `while` loops allow repetitive tasks until a condition changes.
+# - Control statements like `break` and `continue` give flexibility in managing the flow within loops.
