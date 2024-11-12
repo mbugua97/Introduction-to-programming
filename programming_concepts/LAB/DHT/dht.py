@@ -15,7 +15,7 @@ def readings(self):
         return None
 
 while True:
-    data=readings()
+    data=readings
     if data is None:
         message="check the dht's"
         print(message)
