@@ -12,7 +12,7 @@ def hello():
 
 @app.route("/led/<int:led_state>", methods=['POST'])
 def led(led_state):
-  print(f"led_state")
+  print(f"{led_state}")
   if led_state == 0: 
     pi_thing.set_led(False)
   elif led_state == 1:
