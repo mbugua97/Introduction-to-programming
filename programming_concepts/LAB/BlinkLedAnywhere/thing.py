@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 
-LED_PIN = 23
+LED_PIN = 18
 
 
 class PiThing(object):
