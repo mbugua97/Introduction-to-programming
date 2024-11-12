@@ -7,7 +7,7 @@ pin = 18  # GPIO pin number
 humidity, temperature = Adafruit_DHT.read_retry(sensor, str(pin))
 
 if humidity is not None and temperature is not None:
-    print(f"Temperature: {temperature}")
-    print(f"Humidity: {humidity}")
+    print(temperature)
+    print(humidity)
 else:
     print("Failed to retrieve data from humidity sensor")
