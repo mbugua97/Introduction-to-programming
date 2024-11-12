@@ -58,6 +58,7 @@ car.honk()  # Calls the honk method
 car.move()  # Calls the inherited move method
 print(car.car_details())  # Calls car_details method to display car details
 
+```
 
 ### 1. Encapsulation
 Encapsulation refers to the bundling of data and methods that operate on the data into a single unit called a class. It also involves restricting access to certain components of an object to prevent misuse and accidental modification of its internal state.
@@ -65,6 +66,7 @@ Encapsulation refers to the bundling of data and methods that operate on the dat
 In Python, encapsulation is achieved by using access modifiers such as public, private, and protected. By default, all attributes in Python are public. To make an attribute private, you can prefix it with double underscores .
 
 #### Example:
+```python
 class Vehicle:
     def __init__(self, brand, model):
         self.__brand = brand  # private attribute
