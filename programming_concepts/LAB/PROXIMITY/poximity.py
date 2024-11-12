@@ -32,7 +32,7 @@ def measure_distance():
 try:
     while True:
         dist = measure_distance()
-        print(f"Distance: {dist}")
+        print(dist)
         time.sleep(1)
 except KeyboardInterrupt:
     print("Measurement stopped by User")
