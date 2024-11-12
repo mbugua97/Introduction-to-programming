@@ -1,12 +1,13 @@
-import RPi.GPIO  as GPIO
+import RPi.GPIO as GPIO
 import time
 
-my_pin=24
-# HIGH(ON) OR LOW(OFF)
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(my_pin,GPIO.OUT)
-GPIO.output(my_pin,GPIO.HIGH)# IT WILL TURN the gpio to an high state
-time.sleep(3)
-GPIO.output(my_pin,GPIO.LOW)# IT WILL TURN the gpio to an low state
-time.sleep(3)
 
+led_pin=18
+
+GPIO.setup(led_pin,GPIO.OUT)
+
+GPIO.output(led_pin,True)
+time.sleep(1)
+GPIO.output(led_pin,False)
+time.sleep(1)
