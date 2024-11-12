@@ -1,24 +1,31 @@
-import Adafruit_DHT 
+import Adafruit_DHT
+import time
 
-def readings(self):
-    DHT_SENSOR = Adafruit_DHT.DHT11 # initialises the variable  DHT_SENSOR to specifically hold values from the DHT11 sensor from the Adafruit_DHT module
-    DHT1_PIN1 = 18 # initiates DHT_PIN1 to pin 18 of the raspberry pi
-    DHT2_PIN2 = 3 #initaites  DHT_PIN2 to pin 3 of the raspberry pi
+def readings():
+    DHT_SENSOR = Adafruit_DHT.DHT11  # Initializes the DHT11 sensor from Adafruit_DHT module
+    DHT1_GPIO = 24  # Sets DHT1 to GPIO 24 (physical pin 18)
+    DHT2_GPIO = 2   # Sets DHT2 to GPIO 2 (physical pin 3)
+    
     try:
-        try:
-            humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT1_PIN1) 
-            return (humidity,temperature)
-        except:
-            humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT2_PIN2)
-            return (humidity,temperature)
-    except:
+        # Try reading from the first DHT sensor
+        humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT1_GPIO)
+        if humidity is not None and temperature is not None:
+            return humidity, temperature
+        else:
+            # If the first sensor fails, try reading from the second DHT sensor
+            humidity, temperature = Adafruit_DHT.read(DHT_SENSOR, DHT2_GPIO)
+            return humidity, temperature if humidity is not None and temperature is not None else None
+    except Exception as e:
+        print(f"Error: {e}")
         return None
 
 while True:
-    data=readings
+    data = readings()
     if data is None:
-        message="check the dht's"
-        print(message)
+        message = "Check the DHT sensors"
     else:
-        message=readings
-        print(message)
+        humidity, temperature = data
+        message = f"Humidity: {humidity}%, Temperature: {temperature}°C"
+    
+    print(message)
+    time.sleep(2)  # Add a delay between readings to avoid spamming the sensor
