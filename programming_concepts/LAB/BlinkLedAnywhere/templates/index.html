@@ -1,0 +1,36 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+
+        <h2>Afralti Training Raspberry Pi Thing</h2>
+        <p>Welcome to my Pi Thing on the Internet</p>
+       
+
+        <h3>Switch: {{'On' if switch else 'Off'}}</h3>
+        <p>
+        <button type = 'button' id = 'led_on'>Light ON</button>
+        <button type = 'button' id = 'led_off'>Light OFF</button>
+
+        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+        <script>
+           $(document).ready(function() {
+           $('#led_on').click(function(){
+           console.log('LED on!');
+           $.post('/led/1');
+         });
+           $('#led_off').click(function(){
+           console.log('LED off!');
+           $.post('/led/0');
+         });
+         });
+        </script>
+    </body>
+</html>
