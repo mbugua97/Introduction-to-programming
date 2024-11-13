@@ -2,7 +2,7 @@ import RPi.GPIO as GPIO
 
 LED_PIN = 18
 
-
+#this is my code to toggle on and of my led
 class PiThing(object):
   """Raspberry Pi Internet 'Thing'. """
   
